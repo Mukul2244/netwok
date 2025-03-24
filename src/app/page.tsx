@@ -1,103 +1,634 @@
-import Image from "next/image";
+import Link from "next/link"
+import { ArrowRight, MessageSquare, QrCode, Shield, Users } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import { ModeToggle } from "@/components/themeToggler"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="flex min-h-screen flex-col bg-gradient-to-b from-background to-background">
+      <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container flex h-16 items-center justify-between mx-auto">
+          <div className="flex items-center gap-2 font-bold text-xl">
+            <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg p-1.5">
+              <QrCode className="h-5 w-5 text-white" />
+            </div>
+            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Netwok</span>
+          </div>
+          <nav className="hidden md:flex gap-6">
+            <Link href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
+              Features
+            </Link>
+            <Link href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors">
+              How It Works
+            </Link>
+            <Link href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
+              Pricing
+            </Link>
+          </nav>
+          <div className="flex items-center gap-4">
+          <ModeToggle />
+            <Button variant="ghost" size="sm" asChild>
+              <Link href="https://admin.netwok.app">Log In</Link>
+            </Button>
+            <Button
+              size="sm"
+              className="rounded-full px-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 border-0"
+              asChild
+            >
+              <Link href="https://admin.netwok.app/register">Register</Link>
+            </Button>
+          </div>
         </div>
+      </header>
+      <main className="flex-1">
+        <section className="relative overflow-hidden py-20 md:py-32">
+          <div className="absolute inset-0 bg-[url('/placeholder.svg?height=500&width=500')] bg-repeat opacity-[0.02]"></div>
+          <div className="absolute -right-64 -top-64 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-purple-600/20 to-pink-600/20 blur-3xl"></div>
+          <div className="absolute -left-64 -bottom-64 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-blue-600/20 to-cyan-600/20 blur-3xl"></div>
+          <div className="container relative z-10 flex flex-col items-center text-center mx-auto">
+            <div className="inline-flex items-center rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 px-3 py-1 text-sm mb-6 border border-purple-500/20">
+              <span className="mr-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 h-2 w-2"></span>
+              Redefining In-Venue Networking
+            </div>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight max-w-3xl leading-tight">
+              Connect People in Your{" "}
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Physical Space
+              </span>
+            </h1>
+            <p className="mt-6 text-xl text-muted-foreground max-w-2xl">
+              Increase engagement, extend visit duration, and boost revenue by connecting visitors in your venue through
+              digital networking.
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+              <Button
+                size="lg"
+                className="rounded-full px-8 h-12 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 border-0 shadow-lg shadow-purple-600/20"
+                asChild
+              >
+                <Link href="https://admin.netwok.app/register">
+                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full px-8 h-12 border-purple-500/30 hover:bg-purple-500/10 text-foreground"
+                asChild
+              >
+                <Link href="#how-it-works">See How It Works</Link>
+              </Button>
+            </div>
+            <div className="mt-16 relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-blue-600/20 rounded-xl blur-xl"></div>
+              <div className="relative bg-background/40 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10"></div>
+                <Image
+                  src="/placeholder.svg"
+                  height={600}
+                  width={1000}
+                  alt="Netwok app interface"
+                  className="w-full max-w-[900px] relative z-10"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-24 relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-purple-50/5 to-background"></div>
+          <div className="container relative z-10 mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-blue-600/20 rounded-2xl blur-xl"></div>
+                <div className="relative bg-background/40 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10"></div>
+                  <Image
+                    src="/placeholder.svg"
+                    height={500}
+                    width={600}
+                    alt="People connecting at a pub using Netwok app"
+                    className="object-cover w-full h-full relative z-10"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div>
+                <div className="inline-flex items-center rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 px-3 py-1 text-sm mb-6 border border-purple-500/20">
+                  <span className="mr-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 h-2 w-2"></span>
+                  The Concept
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+                  Digital Connections in{" "}
+                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    Physical Spaces
+                  </span>
+                </h2>
+                <p className="text-lg text-muted-foreground mb-8">
+                  Netwok bridges the gap between digital and physical worlds, allowing visitors at your venue to connect
+                  with each other while respecting their privacy.
+                </p>
+                <div className="space-y-6">
+                  <div className="flex gap-4 items-start group">
+                    <div className="rounded-2xl bg-gradient-to-br from-purple-600/20 to-pink-600/20 p-3 group-hover:from-purple-600/30 group-hover:to-pink-600/30 transition-all duration-300">
+                      <Users className="h-6 w-6 text-purple-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-medium">Increase Social Engagement</h3>
+                      <p className="text-muted-foreground">
+                        Help visitors connect with like-minded people at your venue
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 items-start group">
+                    <div className="rounded-2xl bg-gradient-to-br from-blue-600/20 to-cyan-600/20 p-3 group-hover:from-blue-600/30 group-hover:to-cyan-600/30 transition-all duration-300">
+                      <Shield className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-medium">Privacy-Focused</h3>
+                      <p className="text-muted-foreground">Users control their information and who they connect with</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 items-start group">
+                    <div className="rounded-2xl bg-gradient-to-br from-pink-600/20 to-orange-600/20 p-3 group-hover:from-pink-600/30 group-hover:to-orange-600/30 transition-all duration-300">
+                      <QrCode className="h-6 w-6 text-pink-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-medium">Simple QR Code Access</h3>
+                      <p className="text-muted-foreground">Visitors scan your venue&#39;s QR code to join the network</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="features" className="py-24 relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-blue-50/5 to-background"></div>
+          <div className="container relative z-10 mx-auto">
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <div className="inline-flex items-center rounded-full bg-gradient-to-r from-blue-500/10 to-cyan-500/10 px-3 py-1 text-sm mb-6 border border-blue-500/20">
+                <span className="mr-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 h-2 w-2"></span>
+                Features
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                Powerful Tools for{" "}
+                <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                  Venues & Visitors
+                </span>
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Netwok provides everything needed to enhance the social experience at your venue.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/10 hover:border-purple-500/30 transition-all hover:shadow-2xl hover:shadow-purple-600/10 group">
+                <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-purple-600/20 to-pink-600/20 flex items-center justify-center mb-6 group-hover:from-purple-600/30 group-hover:to-pink-600/30 transition-all duration-300">
+                  <QrCode className="h-7 w-7 text-purple-600" />
+                </div>
+                <h3 className="text-xl font-medium mb-3">Custom QR Codes</h3>
+                <p className="text-muted-foreground">
+                  Generate unique QR codes for your venue that visitors can scan to join your network.
+                </p>
+              </div>
+              <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/10 hover:border-blue-500/30 transition-all hover:shadow-2xl hover:shadow-blue-600/10 group">
+                <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-blue-600/20 to-cyan-600/20 flex items-center justify-center mb-6 group-hover:from-blue-600/30 group-hover:to-cyan-600/30 transition-all duration-300">
+                  <MessageSquare className="h-7 w-7 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-medium mb-3">In-Venue Chat</h3>
+                <p className="text-muted-foreground">
+                  Enable visitors to chat with each other while at your venue, fostering connections and community.
+                </p>
+              </div>
+              <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/10 hover:border-pink-500/30 transition-all hover:shadow-2xl hover:shadow-pink-600/10 group">
+                <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-pink-600/20 to-orange-600/20 flex items-center justify-center mb-6 group-hover:from-pink-600/30 group-hover:to-orange-600/30 transition-all duration-300">
+                  <Users className="h-7 w-7 text-pink-600" />
+                </div>
+                <h3 className="text-xl font-medium mb-3">Interest Matching</h3>
+                <p className="text-muted-foreground">
+                  Help visitors find others with similar interests, creating meaningful connections.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="how-it-works" className="py-24 relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-pink-50/5 to-background"></div>
+          <div className="container relative mx-auto z-10">
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <div className="inline-flex items-center rounded-full bg-gradient-to-r from-pink-500/10 to-orange-500/10 px-3 py-1 text-sm mb-6 border border-pink-500/20">
+                <span className="mr-2 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 h-2 w-2"></span>
+                Process
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                How{" "}
+                <span className="bg-gradient-to-r from-pink-600 to-orange-600 bg-clip-text text-transparent">
+                  Netwok Works
+                </span>
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">A simple process for both venue owners and visitors.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-blue-600/20 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity"></div>
+                <div className="relative bg-background/40 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/10 group-hover:border-purple-500/30 transition-all">
+                  <div className="absolute -top-5 left-8 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white w-10 h-10 flex items-center justify-center font-bold text-lg shadow-lg shadow-purple-600/30">
+                    1
+                  </div>
+                  <div className="pt-4">
+                    <h3 className="text-xl font-medium mb-4">Venue Setup</h3>
+                    <p className="text-muted-foreground mb-6">
+                      Venue owners register and generate a unique QR code for their location.
+                    </p>
+                    <div className="flex justify-center">
+                      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-purple-600/10 to-pink-600/10 p-4 w-full">
+                        <Image
+                          src="/placeholder.svg"
+                          width={150}
+                          height={150}
+                          alt="Venue setup illustration"
+                          className="h-32 w-32 object-contain mx-auto"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-cyan-600/20 to-purple-600/20 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity"></div>
+                <div className="relative bg-background/40 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/10 group-hover:border-blue-500/30 transition-all">
+                  <div className="absolute -top-5 left-8 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white w-10 h-10 flex items-center justify-center font-bold text-lg shadow-lg shadow-blue-600/30">
+                    2
+                  </div>
+                  <div className="pt-4">
+                    <h3 className="text-xl font-medium mb-4">Visitor Scan</h3>
+                    <p className="text-muted-foreground mb-6">
+                      Visitors scan the QR code to join the venue&#39;s network and create a profile.
+                    </p>
+                    <div className="flex justify-center">
+                      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-blue-600/10 to-cyan-600/10 p-4 w-full">
+                        <Image
+                          src="/placeholder.svg?height=150&width=150"
+                          width={150}
+                          height={150}
+                          alt="Visitor scanning QR code"
+                          className="h-32 w-32 object-contain mx-auto"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-gradient-to-r from-pink-600/20 via-orange-600/20 to-yellow-600/20 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity"></div>
+                <div className="relative bg-background/40 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/10 group-hover:border-pink-500/30 transition-all">
+                  <div className="absolute -top-5 left-8 rounded-full bg-gradient-to-r from-pink-600 to-orange-600 text-white w-10 h-10 flex items-center justify-center font-bold text-lg shadow-lg shadow-pink-600/30">
+                    3
+                  </div>
+                  <div className="pt-4">
+                    <h3 className="text-xl font-medium mb-4">Connect & Engage</h3>
+                    <p className="text-muted-foreground mb-6">
+                      Visitors connect with others, chat, and engage while at the venue.
+                    </p>
+                    <div className="flex justify-center">
+                      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-pink-600/10 to-orange-600/10 p-4 w-full">
+                        <Image
+                          src="/placeholder.svg"
+                          width={150}
+                          height={150}
+                          alt="People connecting at venue"
+                          className="h-32 w-32 object-contain mx-auto"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="pricing" className="py-24 relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-purple-50/5 to-background"></div>
+          <div className="container relative z-10 mx-auto">
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <div className="inline-flex items-center rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 px-3 py-1 text-sm mb-6 border border-purple-500/20">
+                <span className="mr-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 h-2 w-2"></span>
+                Pricing
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                Simple{" "}
+                <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  Pricing
+                </span>{" "}
+                for Venues
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">Choose the plan that works best for your business.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/10 hover:border-purple-500/30 transition-all hover:shadow-2xl hover:shadow-purple-600/10 flex flex-col">
+                <h3 className="text-xl font-medium mb-2">Starter</h3>
+                <div className="text-4xl font-bold mb-4">
+                  $29<span className="text-lg text-muted-foreground font-normal">/month</span>
+                </div>
+                <p className="text-muted-foreground mb-8">Perfect for small pubs and cafes.</p>
+                <ul className="space-y-4 mb-8 flex-1">
+                  <li className="flex items-center gap-3">
+                    <div className="rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 p-1">
+                      <svg className="h-4 w-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span>Up to 50 concurrent users</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 p-1">
+                      <svg className="h-4 w-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span>Basic analytics</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 p-1">
+                      <svg className="h-4 w-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span>Standard QR code</span>
+                  </li>
+                </ul>
+                <Button
+                  variant="outline"
+                  className="w-full rounded-full border-purple-500/30 hover:bg-purple-500/10 text-foreground"
+                >
+                  Get Started
+                </Button>
+              </div>
+              <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-purple-500/30 flex flex-col relative scale-105 md:scale-110 z-10">
+                <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-1 text-sm font-medium rounded-full shadow-lg shadow-purple-600/30">
+                  Popular
+                </div>
+                <h3 className="text-xl font-medium mb-2">Professional</h3>
+                <div className="text-4xl font-bold mb-4">
+                  $79<span className="text-lg text-muted-foreground font-normal">/month</span>
+                </div>
+                <p className="text-muted-foreground mb-8">Ideal for busy pubs and restaurants.</p>
+                <ul className="space-y-4 mb-8 flex-1">
+                  <li className="flex items-center gap-3">
+                    <div className="rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 p-1">
+                      <svg className="h-4 w-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span>Up to 200 concurrent users</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 p-1">
+                      <svg className="h-4 w-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span>Advanced analytics</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 p-1">
+                      <svg className="h-4 w-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span>Custom branded QR code</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 p-1">
+                      <svg className="h-4 w-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span>Promotional messaging</span>
+                  </li>
+                </ul>
+                <Button className="w-full rounded-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 border-0 shadow-lg shadow-purple-600/20">
+                  Get Started
+                </Button>
+              </div>
+              <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/10 hover:border-purple-500/30 transition-all hover:shadow-2xl hover:shadow-purple-600/10 flex flex-col">
+                <h3 className="text-xl font-medium mb-2">Enterprise</h3>
+                <div className="text-4xl font-bold mb-4">
+                  $199<span className="text-lg text-muted-foreground font-normal">/month</span>
+                </div>
+                <p className="text-muted-foreground mb-8">For large venues and event organizers.</p>
+                <ul className="space-y-4 mb-8 flex-1">
+                  <li className="flex items-center gap-3">
+                    <div className="rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 p-1">
+                      <svg className="h-4 w-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span>Unlimited users</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 p-1">
+                      <svg className="h-4 w-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span>Comprehensive analytics</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 p-1">
+                      <svg className="h-4 w-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span>Fully customizable experience</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 p-1">
+                      <svg className="h-4 w-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span>Priority support</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 p-1">
+                      <svg className="h-4 w-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span>API access</span>
+                  </li>
+                </ul>
+                <Button
+                  variant="outline"
+                  className="w-full rounded-full border-purple-500/30 hover:bg-purple-500/10 text-foreground"
+                >
+                  Contact Sales
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-24 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10 z-0"></div>
+          <div className="absolute -right-64 -top-64 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-purple-600/20 to-pink-600/20 blur-3xl"></div>
+          <div className="absolute -left-64 -bottom-64 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-blue-600/20 to-cyan-600/20 blur-3xl"></div>
+          <div className="container relative z-10 text-center mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
+              Ready to{" "}
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Transform
+              </span>{" "}
+              Your Venue&#39;s Social Experience?
+            </h2>
+            <p className="text-xl mb-10 max-w-2xl mx-auto text-muted-foreground">
+              Join thousands of venues already using Netwok to increase engagement, extend visit duration, and boost
+              revenue.
+            </p>
+            <Button
+              size="lg"
+              className="rounded-full px-8 h-12 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 border-0 shadow-lg shadow-purple-600/20"
+              asChild
+            >
+              <Link href="https://admin.netwok.app/register">Get Started Today</Link>
+            </Button>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      <footer className="border-t py-16 bg-gradient-to-b from-background to-background/80">
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row justify-between gap-12">
+            <div className="md:w-1/3">
+              <div className="flex items-center gap-2 font-bold text-xl mb-6">
+                <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg p-1.5">
+                  <QrCode className="h-5 w-5 text-white" />
+                </div>
+                <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  Netwok
+                </span>
+              </div>
+              <p className="text-muted-foreground mb-6">
+                Connecting people in physical spaces through digital networking.
+              </p>
+              <div className="flex gap-4">
+                <a
+                  href="#"
+                  className="rounded-full bg-gradient-to-r from-purple-600/10 to-pink-600/10 p-2 hover:from-purple-600/20 hover:to-pink-600/20 transition-all"
+                >
+                  <svg className="h-5 w-5 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  className="rounded-full bg-gradient-to-r from-purple-600/10 to-pink-600/10 p-2 hover:from-purple-600/20 hover:to-pink-600/20 transition-all"
+                >
+                  <svg className="h-5 w-5 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0z"></path>
+                    <path d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8z"></path>
+                    <circle cx="18.406" cy="5.594" r="1.44"></circle>
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  className="rounded-full bg-gradient-to-r from-purple-600/10 to-pink-600/10 p-2 hover:from-purple-600/20 hover:to-pink-600/20 transition-all"
+                >
+                  <svg className="h-5 w-5 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+              <div>
+                <h3 className="font-medium mb-3 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  Product
+                </h3>
+                <ul className="space-y-2">
+                  <li>
+                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                      Features
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                      Pricing
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                      Case Studies
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                      Testimonials
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-medium mb-3 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                  Company
+                </h3>
+                <ul className="space-y-2">
+                  <li>
+                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                      About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                      Blog
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                      Careers
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                      Contact
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-medium mb-3 bg-gradient-to-r from-pink-600 to-orange-600 bg-clip-text text-transparent">
+                  Legal
+                </h3>
+                <ul className="space-y-2">
+                  <li>
+                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                      Privacy Policy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                      Terms of Service
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                      Cookie Policy
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="mt-12 pt-8 border-t border-white/10 text-center text-muted-foreground">
+            <p>© {new Date().getFullYear()} Netwok. All rights reserved.</p>
+          </div>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
+
