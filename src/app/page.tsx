@@ -26,7 +26,7 @@ export default function Home() {
             </Link>
           </nav>
           <div className="flex items-center gap-4">
-          <ModeToggle />
+            <ModeToggle />
             <Button variant="ghost" size="sm" asChild>
               <Link href="https://admin.netwok.app">Log In</Link>
             </Button>
@@ -42,7 +42,7 @@ export default function Home() {
       </header>
       <main className="flex-1">
         <section className="relative overflow-hidden py-20 md:py-32">
-          <div className="absolute inset-0 bg-[url('/placeholder.svg?height=500&width=500')] bg-repeat opacity-[0.02]"></div>
+          <div className="absolute inset-0  bg-repeat opacity-[0.02]"></div>
           <div className="absolute -right-64 -top-64 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-purple-600/20 to-pink-600/20 blur-3xl"></div>
           <div className="absolute -left-64 -bottom-64 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-blue-600/20 to-cyan-600/20 blur-3xl"></div>
           <div className="container relative z-10 flex flex-col items-center text-center mx-auto">
@@ -170,7 +170,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-background via-purple-50/5 to-background"></div>
           <div className="container relative z-10 mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="relative">
+              <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-blue-600/20 rounded-2xl blur-xl"></div>
                 <div className="relative bg-background/40 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10"></div>
@@ -380,42 +380,43 @@ export default function Home() {
               <p className="mt-4 text-lg text-muted-foreground">A simple process for both venue owners and visitors.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="relative group">
+              {/* Card 1 */}
+              <div className="relative group flex flex-col h-full">
                 <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-blue-600/20 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity"></div>
-                <div className="relative bg-background/40 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/10 group-hover:border-purple-500/30 transition-all">
+                <div className="relative bg-background/40 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/10 group-hover:border-purple-500/30 transition-all flex flex-col h-full">
                   <div className="absolute -top-5 left-8 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white w-10 h-10 flex items-center justify-center font-bold text-lg shadow-lg shadow-purple-600/30">
                     1
                   </div>
-                  <div className="pt-4">
+                  <div className="pt-4 flex-1">
                     <h3 className="text-xl font-medium mb-4">Venue Setup</h3>
                     <p className="text-muted-foreground mb-6">
                       Venue owners register and generate a unique QR code for their location.
                     </p>
-                    <div className="flex justify-center">
-                      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-purple-600/10 to-pink-600/10 p-4 w-full">
-                        {/* Venue Setup Illustration */}
-                        <div className="mx-auto w-full max-w-[200px]">
-                          <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4 border border-white/20 shadow-lg">
-                            <div className="flex items-center justify-between mb-4">
-                              <div className="flex items-center gap-2">
-                                <QrCode className="h-5 w-5 text-purple-600" />
-                                <span className="font-bold text-sm">Venue Dashboard</span>
-                              </div>
-                              <div className="h-6 w-6 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center text-white text-xs">
-                                <Zap className="h-3 w-3" />
-                              </div>
+                  </div>
+                  <div className="flex justify-center">
+                    <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-purple-600/10 to-pink-600/10 p-4 w-full">
+                      {/* Venue Setup Illustration */}
+                      <div className="mx-auto w-full max-w-[200px]">
+                        <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4 border border-white/20 shadow-lg">
+                          <div className="flex items-center justify-between mb-4">
+                            <div className="flex items-center gap-2">
+                              <QrCode className="h-5 w-5 text-purple-600" />
+                              <span className="font-bold text-sm">Venue Dashboard</span>
                             </div>
-                            <div className="space-y-3 mb-4">
-                              <div className="h-2 w-3/4 bg-purple-600/20 rounded-full"></div>
-                              <div className="h-2 w-1/2 bg-purple-600/20 rounded-full"></div>
+                            <div className="h-6 w-6 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center text-white text-xs">
+                              <Zap className="h-3 w-3" />
                             </div>
-                            <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-3 flex items-center justify-center mb-4">
-                              <QrCode className="h-16 w-16 text-purple-600" />
-                            </div>
-                            <div className="flex justify-center">
-                              <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-medium px-3 py-1 rounded-full">
-                                Generate QR Code
-                              </div>
+                          </div>
+                          <div className="space-y-3 mb-4">
+                            <div className="h-2 w-3/4 bg-purple-600/20 rounded-full"></div>
+                            <div className="h-2 w-1/2 bg-purple-600/20 rounded-full"></div>
+                          </div>
+                          <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-3 flex items-center justify-center mb-4">
+                            <QrCode className="h-16 w-16 text-purple-600" />
+                          </div>
+                          <div className="flex justify-center">
+                            <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-medium px-3 py-1 rounded-full">
+                              Generate QR Code
                             </div>
                           </div>
                         </div>
@@ -424,39 +425,41 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="relative group">
+
+              {/* Card 2 */}
+              <div className="relative group flex flex-col h-full">
                 <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-cyan-600/20 to-purple-600/20 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity"></div>
-                <div className="relative bg-background/40 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/10 group-hover:border-blue-500/30 transition-all">
+                <div className="relative bg-background/40 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/10 group-hover:border-blue-500/30 transition-all flex flex-col h-full">
                   <div className="absolute -top-5 left-8 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white w-10 h-10 flex items-center justify-center font-bold text-lg shadow-lg shadow-blue-600/30">
                     2
                   </div>
-                  <div className="pt-4">
+                  <div className="pt-4 flex-1">
                     <h3 className="text-xl font-medium mb-4">Visitor Scan</h3>
                     <p className="text-muted-foreground mb-6">
                       Visitors scan the QR code to join the venue&#39;s network and create a profile.
                     </p>
-                    <div className="flex justify-center">
-                      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-blue-600/10 to-cyan-600/10 p-4 w-full">
-                        {/* Visitor Scan Illustration */}
-                        <div className="mx-auto w-full max-w-[200px]">
-                          <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4 border border-white/20 shadow-lg">
-                            <div className="flex justify-center mb-4">
-                              <div className="h-16 w-16 rounded-full bg-gradient-to-r from-blue-600/30 to-cyan-600/30 flex items-center justify-center">
-                                <QrCode className="h-8 w-8 text-blue-600" />
-                              </div>
+                  </div>
+                  <div className="flex justify-center">
+                    <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-blue-600/10 to-cyan-600/10 p-4 w-full">
+                      {/* Visitor Scan Illustration */}
+                      <div className="mx-auto w-full max-w-[200px]">
+                        <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4 border border-white/20 shadow-lg">
+                          <div className="flex justify-center mb-4">
+                            <div className="h-16 w-16 rounded-full bg-gradient-to-r from-blue-600/30 to-cyan-600/30 flex items-center justify-center">
+                              <QrCode className="h-8 w-8 text-blue-600" />
                             </div>
-                            <div className="text-center mb-4">
-                              <div className="font-bold text-sm mb-1">Scan QR Code</div>
-                              <div className="text-xs text-muted-foreground">to join The Golden Pub</div>
-                            </div>
-                            <div className="bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-lg p-3 flex flex-col items-center gap-2 mb-4">
-                              <div className="h-2 w-3/4 bg-blue-600/30 rounded-full"></div>
-                              <div className="h-2 w-1/2 bg-blue-600/30 rounded-full"></div>
-                            </div>
-                            <div className="flex justify-center">
-                              <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-xs font-medium px-3 py-1 rounded-full">
-                                Join Network
-                              </div>
+                          </div>
+                          <div className="text-center mb-4">
+                            <div className="font-bold text-sm mb-1">Scan QR Code</div>
+                            <div className="text-xs text-muted-foreground">to join The Golden Pub</div>
+                          </div>
+                          <div className="bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-lg p-3 flex flex-col items-center gap-2 mb-4">
+                            <div className="h-2 w-3/4 bg-blue-600/30 rounded-full"></div>
+                            <div className="h-2 w-1/2 bg-blue-600/30 rounded-full"></div>
+                          </div>
+                          <div className="flex justify-center">
+                            <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-xs font-medium px-3 py-1 rounded-full">
+                              Join Network
                             </div>
                           </div>
                         </div>
@@ -465,56 +468,58 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="relative group">
+
+              {/* Card 3 */}
+              <div className="relative group flex flex-col h-full">
                 <div className="absolute -inset-4 bg-gradient-to-r from-pink-600/20 via-orange-600/20 to-yellow-600/20 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity"></div>
-                <div className="relative bg-background/40 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/10 group-hover:border-pink-500/30 transition-all">
+                <div className="relative bg-background/40 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/10 group-hover:border-pink-500/30 transition-all flex flex-col h-full">
                   <div className="absolute -top-5 left-8 rounded-full bg-gradient-to-r from-pink-600 to-orange-600 text-white w-10 h-10 flex items-center justify-center font-bold text-lg shadow-lg shadow-pink-600/30">
                     3
                   </div>
-                  <div className="pt-4">
+                  <div className="pt-4 flex-1">
                     <h3 className="text-xl font-medium mb-4">Connect & Engage</h3>
                     <p className="text-muted-foreground mb-6">
                       Visitors connect with others, chat, and engage while at the venue.
                     </p>
-                    <div className="flex justify-center">
-                      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-pink-600/10 to-orange-600/10 p-4 w-full">
-                        {/* Connect & Engage Illustration */}
-                        <div className="mx-auto w-full max-w-[200px]">
-                          <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4 border border-white/20 shadow-lg">
-                            <div className="flex items-center gap-3 mb-4">
-                              <div className="h-10 w-10 rounded-full bg-gradient-to-r from-pink-600/30 to-orange-600/30 flex items-center justify-center text-xs font-bold">
-                                A
-                              </div>
-                              <div className="flex-1">
-                                <div className="font-bold text-sm">Alex</div>
-                                <div className="text-xs text-muted-foreground">Music, Travel</div>
-                              </div>
-                              <div className="h-8 w-8 rounded-full bg-gradient-to-r from-pink-600 to-orange-600 flex items-center justify-center text-white">
-                                <MessageSquare className="h-4 w-4" />
-                              </div>
+                  </div>
+                  <div className="flex justify-center">
+                    <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-pink-600/10 to-orange-600/10 p-4 w-full">
+                      {/* Connect & Engage Illustration */}
+                      <div className="mx-auto w-full max-w-[200px]">
+                        <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4 border border-white/20 shadow-lg">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="h-10 w-10 rounded-full bg-gradient-to-r from-pink-600/30 to-orange-600/30 flex items-center justify-center text-xs font-bold">
+                              A
                             </div>
-                            <div className="space-y-2 mb-4">
-                              <div className="bg-gradient-to-r from-pink-600/10 to-orange-600/10 p-2 rounded-lg text-xs">
-                                <div className="font-medium mb-1">Hey! I noticed we both like jazz music.</div>
-                                <div className="text-muted-foreground text-[10px]">2 min ago</div>
-                              </div>
-                              <div className="bg-gradient-to-r from-pink-600/20 to-orange-600/20 p-2 rounded-lg text-xs ml-auto max-w-[80%]">
-                                <div className="font-medium mb-1">Yes! Are you going to the live show tonight?</div>
-                                <div className="text-muted-foreground text-[10px]">Just now</div>
-                              </div>
+                            <div className="flex-1">
+                              <div className="font-bold text-sm">Alex</div>
+                              <div className="text-xs text-muted-foreground">Music, Travel</div>
                             </div>
-                            <div className="flex gap-2">
-                              <div className="flex-1 h-6 bg-gradient-to-r from-pink-600/10 to-orange-600/10 rounded-full"></div>
-                              <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-600 to-orange-600 flex items-center justify-center text-white">
-                                <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M5 12h14M12 5l7 7-7 7"
-                                  />
-                                </svg>
-                              </div>
+                            <div className="h-8 w-8 rounded-full bg-gradient-to-r from-pink-600 to-orange-600 flex items-center justify-center text-white">
+                              <MessageSquare className="h-4 w-4" />
+                            </div>
+                          </div>
+                          <div className="space-y-2 mb-4">
+                            <div className="bg-gradient-to-r from-pink-600/10 to-orange-600/10 p-2 rounded-lg text-xs">
+                              <div className="font-medium mb-1">Hey! I noticed we both like jazz music.</div>
+                              <div className="text-muted-foreground text-[10px]">2 min ago</div>
+                            </div>
+                            <div className="bg-gradient-to-r from-pink-600/20 to-orange-600/20 p-2 rounded-lg text-xs ml-auto max-w-[80%]">
+                              <div className="font-medium mb-1">Yes! Are you going to the live show tonight?</div>
+                              <div className="text-muted-foreground text-[10px]">Just now</div>
+                            </div>
+                          </div>
+                          <div className="flex gap-2">
+                            <div className="flex-1 h-6 bg-gradient-to-r from-pink-600/10 to-orange-600/10 rounded-full"></div>
+                            <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-600 to-orange-600 flex items-center justify-center text-white">
+                              <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M5 12h14M12 5l7 7-7 7"
+                                />
+                              </svg>
                             </div>
                           </div>
                         </div>
