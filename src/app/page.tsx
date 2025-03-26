@@ -5,7 +5,7 @@ import { ModeToggle } from "@/components/themeToggler"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-gradient-to-b from-background to-background">
+    <div className="flex min-h-screen w-full flex-col bg-gradient-to-b from-background to-background overflow-x-hidden">
       <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between mx-auto">
           <div className="flex items-center gap-2 font-bold text-xl">
@@ -387,13 +387,13 @@ export default function Home() {
                   <div className="absolute -top-5 left-8 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white w-10 h-10 flex items-center justify-center font-bold text-lg shadow-lg shadow-purple-600/30">
                     1
                   </div>
-                  <div className="pt-4 flex-1">
+                  <div className="pt-4 flex-1 min-h-1/3 max-h-1/3">
                     <h3 className="text-xl font-medium mb-4">Venue Setup</h3>
                     <p className="text-muted-foreground mb-6">
                       Venue owners register and generate a unique QR code for their location.
                     </p>
                   </div>
-                  <div className="flex justify-center">
+                  <div className="flex justify-center max-h-2/3 min-h-2/3">
                     <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-purple-600/10 to-pink-600/10 p-4 w-full">
                       {/* Venue Setup Illustration */}
                       <div className="mx-auto w-full max-w-[200px]">
@@ -433,16 +433,16 @@ export default function Home() {
                   <div className="absolute -top-5 left-8 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white w-10 h-10 flex items-center justify-center font-bold text-lg shadow-lg shadow-blue-600/30">
                     2
                   </div>
-                  <div className="pt-4 flex-1">
+                  <div className="pt-4 flex-1 min-h-1/3 max-h-1/3">
                     <h3 className="text-xl font-medium mb-4">Visitor Scan</h3>
                     <p className="text-muted-foreground mb-6">
                       Visitors scan the QR code to join the venue&#39;s network and create a profile.
                     </p>
                   </div>
-                  <div className="flex justify-center">
+                  <div className="flex justify-center min-h-2/3 max-h-2/3">
                     <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-blue-600/10 to-cyan-600/10 p-4 w-full">
                       {/* Visitor Scan Illustration */}
-                      <div className="mx-auto w-full max-w-[200px]">
+                      <div className=" mx-auto w-full max-w-[200px]">
                         <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4 border border-white/20 shadow-lg">
                           <div className="flex justify-center mb-4">
                             <div className="h-16 w-16 rounded-full bg-gradient-to-r from-blue-600/30 to-cyan-600/30 flex items-center justify-center">
@@ -476,17 +476,17 @@ export default function Home() {
                   <div className="absolute -top-5 left-8 rounded-full bg-gradient-to-r from-pink-600 to-orange-600 text-white w-10 h-10 flex items-center justify-center font-bold text-lg shadow-lg shadow-pink-600/30">
                     3
                   </div>
-                  <div className="pt-4 flex-1">
+                  <div className="pt-4 flex-1 min-h-1/3 max-h-1/3">
                     <h3 className="text-xl font-medium mb-4">Connect & Engage</h3>
                     <p className="text-muted-foreground mb-6">
                       Visitors connect with others, chat, and engage while at the venue.
                     </p>
                   </div>
-                  <div className="flex justify-center">
+                  <div className="flex justify-center min-h-2/3 max-h-2/3 ">
                     <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-pink-600/10 to-orange-600/10 p-4 w-full">
                       {/* Connect & Engage Illustration */}
-                      <div className="mx-auto w-full max-w-[200px]">
-                        <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4 border border-white/20 shadow-lg">
+                      <div className="mx-auto w-full max-w-[200px] pb-6">
+                        <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4 border border-white/20 shadow-lg ">
                           <div className="flex items-center gap-3 mb-4">
                             <div className="h-10 w-10 rounded-full bg-gradient-to-r from-pink-600/30 to-orange-600/30 flex items-center justify-center text-xs font-bold">
                               A
