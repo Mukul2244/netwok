@@ -7,13 +7,12 @@ import Image from "next/image"
 export default function Home() {
   return (
     <div className="flex min-h-screen w-full flex-col bg-gradient-to-b from-background to-background overflow-x-hidden">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between mx-auto">
+      <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-2 md:px-4">
+        <div className="container flex h-16 items-center justify-between mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 font-bold text-xl">
-            <div className="flex items-center justify-center rounded-lg ">
+            <div className="flex items-center justify-center rounded-lg">
               <Image src="/logo.svg" alt="logo" width={128} height={34} />
             </div>
-            {/* <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Netwok</span> */}
           </div>
           <nav className="hidden md:flex gap-6">
             <Link href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
@@ -39,25 +38,33 @@ export default function Home() {
               <Link href="https://admin.netwok.app/register">Register</Link>
             </Button>
           </div>
+          {/* Hamburger Menu for Small Screens */}
+          <div className="md:hidden">
+            <button className="text-muted-foreground hover:text-foreground">
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            </button>
+          </div>
         </div>
       </header>
-      <main className="flex-1">
+      <main className="flex-1 px-2 md:px-4">
         <section className="relative overflow-hidden py-20 md:py-32">
           <div className="absolute inset-0  bg-repeat opacity-[0.02]"></div>
           <div className="absolute -right-64 -top-64 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-purple-600/20 to-pink-600/20 blur-3xl"></div>
           <div className="absolute -left-64 -bottom-64 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-blue-600/20 to-cyan-600/20 blur-3xl"></div>
-          <div className="container relative z-10 flex flex-col items-center text-center mx-auto">
+          <div className="container relative z-10 flex flex-col items-center text-center mx-auto px-4 sm:px-6 lg:px-8">
             <div className="inline-flex items-center rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 px-3 py-1 text-sm mb-6 border border-purple-500/20">
               <span className="mr-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 h-2 w-2"></span>
               Redefining In-Venue Networking
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight max-w-3xl leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight max-w-3xl leading-tight">
               Connect People in Your{" "}
               <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                 Physical Space
               </span>
             </h1>
-            <p className="mt-6 text-xl text-muted-foreground max-w-2xl">
+            <p className="mt-6 text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl">
               Increase engagement, extend visit duration, and boost revenue by connecting visitors in your venue through
               digital networking.
             </p>
@@ -722,7 +729,7 @@ export default function Home() {
         </section>
       </main>
       <footer className="border-t py-16 bg-gradient-to-b from-background to-background/80">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between gap-12">
             <div className="md:w-1/3">
               <div className="flex items-center gap-2 font-bold text-xl mb-6">
