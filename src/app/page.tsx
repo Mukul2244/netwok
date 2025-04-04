@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ArrowRight, Bell, Globe, MessageSquare, QrCode, Shield, Users, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/themeToggler"
+import Image from "next/image"
 
 export default function Home() {
   return (
@@ -9,10 +10,10 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between mx-auto">
           <div className="flex items-center gap-2 font-bold text-xl">
-            <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg p-1.5">
-              <QrCode className="h-5 w-5 text-white" />
+            <div className="flex items-center justify-center rounded-lg ">
+              <Image src="/logo.svg" alt="logo" width={128} height={34} />
             </div>
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Netwok</span>
+            {/* <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Netwok</span> */}
           </div>
           <nav className="hidden md:flex gap-6">
             <Link href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
@@ -88,10 +89,9 @@ export default function Home() {
                     {/* App Interface Mockup */}
                     <div className="relative">
                       {/* App Header */}
-                      <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-4 text-white flex items-center justify-between rounded-t-lg">
+                      <div className=" p-4 text-white flex items-center justify-between rounded-t-lg">
                         <div className="flex items-center gap-2">
-                          <QrCode className="h-5 w-5" />
-                          <span className="font-bold">Netwok</span>
+                          <Image src="/logo.svg" alt="logo" width={100} height={34} />
                         </div>
                         <div className="flex items-center gap-3">
                           <Bell className="h-5 w-5" />
@@ -726,12 +726,9 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between gap-12">
             <div className="md:w-1/3">
               <div className="flex items-center gap-2 font-bold text-xl mb-6">
-                <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg p-1.5">
-                  <QrCode className="h-5 w-5 text-white" />
+                <div className="flex items-center justify-center rounded-lg ">
+                  <Image src="/logo.svg" alt="logo" width={128} height={34} />
                 </div>
-                <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Netwok
-                </span>
               </div>
               <p className="text-muted-foreground mb-6">
                 Connecting people in physical spaces through digital networking.
