@@ -878,6 +878,104 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section id="venues" className="py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-blue-50/5 to-background"></div>
+        <div className="container relative z-10 mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="inline-flex items-center rounded-full bg-gradient-to-r from-blue-500/10 to-cyan-500/10 px-3 py-1 text-sm mb-6 border border-blue-500/20">
+                <span className="mr-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 h-2 w-2"></span>
+                For Venue Owners
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+                Boost Engagement and{" "}
+                <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                  Revenue
+                </span>
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Join thousands of venues already using Netwok to increase
+                visitor engagement, extend stay duration, and boost revenue
+                through meaningful connections.
+              </p>
+              <Button
+                size="lg"
+                className="rounded-full px-8 h-12 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 border-0 shadow-lg shadow-blue-600/20"
+                asChild
+              >
+                <Link href="https://admin.netwok.app/register">Register Your Venue</Link>
+              </Button>
+            </div>
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-cyan-600/20 to-purple-600/20 rounded-2xl blur-xl"></div>
+              <div className="relative bg-background/40 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-cyan-600/10"></div>
+                <div className="relative z-10 p-6">
+                  <div className="bg-gradient-to-br from-blue-900/20 to-cyan-900/20 rounded-lg overflow-hidden p-6">
+                    <div className="flex justify-between items-center mb-6">
+                      <div className="bg-gradient-to-r from-blue-600/90 to-cyan-600/90 px-4 py-2 rounded-lg text-white font-bold">
+                        The Golden Pub
+                      </div>
+                      <div className="bg-gradient-to-r from-purple-600/90 to-pink-600/90 px-3 py-1 rounded-lg text-white text-sm">
+                        24 people connected
+                      </div>
+                    </div>
+
+                    <div className="bg-background/30 backdrop-blur-sm rounded-lg p-4 border border-white/10 mb-6">
+                      <div className="flex justify-between mb-3">
+                        <div className="font-medium">Venue Analytics</div>
+                        <div className="text-xs bg-blue-600/20 text-blue-600 px-2 py-1 rounded-full">
+                          Live
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-3 gap-3 text-center">
+                        <div>
+                          <div className="text-2xl font-bold text-blue-500">
+                            24
+                          </div>
+                          <div className="text-xs text-muted-foreground">
+                            Active Users
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-2xl font-bold text-cyan-500">
+                            18
+                          </div>
+                          <div className="text-xs text-muted-foreground">
+                            Connections
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-2xl font-bold text-purple-500">
+                            1.8h
+                          </div>
+                          <div className="text-xs text-muted-foreground">
+                            Avg. Stay
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-background/30 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="font-medium">Venue QR Code</div>
+                        <div className="text-xs bg-green-600/20 text-green-600 px-2 py-1 rounded-full">
+                          Active
+                        </div>
+                      </div>
+                      <div className="flex justify-center">
+                        <div className="bg-white p-3 rounded-lg">
+                          <QrCode className="h-24 w-24 text-blue-600" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10 z-0"></div>

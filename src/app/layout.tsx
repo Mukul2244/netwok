@@ -40,7 +40,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen w-full flex-col bg-gradient-to-b from-background to-background overflow-x-hidden">
+          <div className="flex w-full  min-h-screen flex-col bg-gradient-to-b from-background to-background overflow-hidden">
             <Header />
             <main className="flex-1 px-4 md:px-0 ">{children}</main>
             <Footer />
