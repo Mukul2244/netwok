@@ -47,15 +47,15 @@ function Header() {
         </nav>
         <div className="flex items-center gap-4">
           <ModeToggle />
-          <Button variant="ghost" size="sm" asChild>
-            <Link href="https://admin.netwok.app">Log In</Link>
+          <Button className="hidden md:flex" variant="ghost" size="sm" asChild>
+            <Link href="https://admin.netwok.app/venue/login">Log In</Link>
           </Button>
           <Button
             size="sm"
-            className="rounded-full px-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 border-0"
+            className="hidden md:flex rounded-full px-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 border-0"
             asChild
           >
-            <Link href="https://admin.netwok.app/register">Sign up</Link>
+            <Link href="https://admin.netwok.app/venue/register">Register</Link>
           </Button>
         </div>
       </div>

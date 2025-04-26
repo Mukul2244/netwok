@@ -40,7 +40,7 @@ export default function Home() {
               className="rounded-full px-8 h-12 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 border-0 shadow-lg shadow-purple-600/20"
               asChild
             >
-              <Link href="https://admin.netwok.app/register">
+              <Link href="https://admin.netwok.app/venue/register">
                 Get Started <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -903,7 +903,7 @@ export default function Home() {
                 className="rounded-full px-8 h-12 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 border-0 shadow-lg shadow-blue-600/20"
                 asChild
               >
-                <Link href="https://admin.netwok.app/register">Register Your Venue</Link>
+                <Link href="https://admin.netwok.app/venue/register">Register Your Venue</Link>
               </Button>
             </div>
             <div className="relative">
@@ -998,7 +998,7 @@ export default function Home() {
             className="rounded-full px-8 h-12 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 border-0 shadow-lg shadow-purple-600/20"
             asChild
           >
-            <Link href="https://admin.netwok.app/register">
+            <Link href="https://admin.netwok.app/venue/register">
               Get Started Today
             </Link>
           </Button>
