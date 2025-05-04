@@ -4,7 +4,7 @@ import { ModeToggle } from "@/components/themeToggler";
 import Image from "next/image";
 import React from "react";
 
-function Header() {
+export default function Header() {
   return (
     <header className="fixed top-0 z-50 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-2 md:px-4">
       <div className="container flex h-16 items-center justify-between mx-auto ">
@@ -47,7 +47,7 @@ function Header() {
         </nav>
         <div className="flex items-center gap-4">
           <ModeToggle />
-          <Button className="hidden md:flex" variant="ghost" size="sm" asChild>
+          <Button variant="ghost" size="sm" asChild>
             <Link href="https://admin.netwok.app/venue/login">Log In</Link>
           </Button>
           <Button
@@ -63,4 +63,4 @@ function Header() {
   );
 }
 
-export default Header;
+
